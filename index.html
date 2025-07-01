@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>돌봄매트 예상 견적</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>돌봄매트 예상 견적 계산기</h1>
+    <label>🏢 아파트명 <input type="text" id="aptName" /></label>
+    <label>📏 평형 <input type="number" id="pyeong" /></label>
+    <label>🛋️ 시공 공간 <input type="text" id="area" placeholder="예: 거실+복도" /></label>
+    <label>🎨 색상
+      <select id="color">
+        <option value="모던화이트">모던화이트</option>
+        <option value="화이트마블">화이트마블</option>
+        <option value="화이트우드">화이트우드</option>
+        <option value="미정">미정</option>
+      </select>
+    </label>
+    <label>🧱 매트 수 <input type="number" id="matCount" /></label>
+    <button onclick="calculate()">견적 계산</button>
+    <pre id="resultBox"></pre>
+    <button onclick="copyResult()">📋 복사하기</button>
+    <a href="http://pf.kakao.com/_UMyBK/chat" target="_blank" class="kakao-btn">💬 예약상담</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
