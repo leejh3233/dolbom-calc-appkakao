@@ -8,9 +8,12 @@ function calculate() {
   // 금액 계산 로직
   const basePrice = count * 16000;          // 기본가 (16,000원)
   const groupBuy = count * 15500;            // 공구가 (15,500원)
-  const totalBenefitPrice = count * 13950;  // 모든 혜택 적용가 (13,950원)
+  const onnuriPrice = count * 13950;        // 온누리+공구 적용가 (13,950원)
   
-  // 총 할인 금액 계산 (기본가 - 모든 혜택가)
+  // 모든 혜택 적용가 (온누리 13,950원 - 쿠폰 3만 - 후기 6만)
+  const totalBenefitPrice = onnuriPrice - 90000;
+  
+  // 총 할인 금액 계산 (소비자가 16,000원 기준 - 최종 혜택가)
   const totalDiscount = basePrice - totalBenefitPrice;
 
   const result = `🧾 <돌봄매트 예상 견적>
@@ -31,7 +34,8 @@ function calculate() {
 2️⃣ 샘플박스 내 3만원 할인쿠폰 적용
 3️⃣ 후기 작성 시 최대 2+2+2 = 6만원 캐시백
 
-🔥 온누리+공구적용 시: ${totalBenefitPrice.toLocaleString()}원(장당 13,950원)
+🔥 온누리+공구적용 시: ${onnuriPrice.toLocaleString()}원(장당 13,950원)
+✨ 모든 추가 혜택적용 시: ${totalBenefitPrice.toLocaleString()}원
 (소비자가 대비 ✨${totalDiscount.toLocaleString()}원✨ 저렴하게 가능!)
 
 ━━━━━━━━━━━━━━━━
@@ -42,7 +46,7 @@ function calculate() {
   document.getElementById("resultBox").innerText = result;
 }
 
-// --- 이 부분을 추가하세요 ---
+// 복사 기능 (기존과 동일)
 function copyResult() {
   const resultText = document.getElementById("resultBox").innerText;
 
@@ -51,7 +55,6 @@ function copyResult() {
     return;
   }
 
-  // 클립보드 복사 실행
   navigator.clipboard.writeText(resultText).then(() => {
     alert("📋 견적 내용이 복사되었습니다! 카톡창에 붙여넣기(Ctrl+V) 하세요.");
   }).catch(err => {
