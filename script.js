@@ -8,7 +8,7 @@ function calculate() {
   // 금액 계산 로직
   const basePrice = count * 16000;          // 기본가 (16,000원)
   const groupBuy = count * 15500;           // 공구가 (15,500원)
-  const totalBenefitPrice = count * 13050;  // 모든 혜택 적용가 (13,050원)
+  const totalBenefitPrice = count * 13950;  // 모든 혜택 적용가 (13,950원)
   
   // 총 할인 금액 계산 (기본가 - 모든 혜택가)
   const totalDiscount = basePrice - totalBenefitPrice;
@@ -31,7 +31,7 @@ function calculate() {
 2️⃣ 샘플박스 내 3만원 할인쿠폰 적용
 3️⃣ 후기 작성 시 최대 2+2+2 = 6만원 캐시백
 
-🔥 모든 추가혜택 적용 시: ${totalBenefitPrice.toLocaleString()}원(장당 13,050원)
+🔥 온누리+공구적용 시: ${totalBenefitPrice.toLocaleString()}원(장당 13,950원)
 (소비자가 대비 ✨${totalDiscount.toLocaleString()}원✨ 저렴하게 가능!)
 
 ━━━━━━━━━━━━━━━━
