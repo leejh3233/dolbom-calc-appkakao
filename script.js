@@ -7,7 +7,7 @@ function calculate() {
 
   // 금액 계산 로직
   const basePrice = count * 16000;          // 기본가 (16,000원)
-  const groupBuy = count * 15500;           // 공구가 (15,500원)
+  const groupBuy = count * 15500;            // 공구가 (15,500원)
   const totalBenefitPrice = count * 13950;  // 모든 혜택 적용가 (13,950원)
   
   // 총 할인 금액 계산 (기본가 - 모든 혜택가)
@@ -40,4 +40,22 @@ function calculate() {
 ⚠️ 실제 시공 후 사용한 장수로 최종 정산됩니다.`;
 
   document.getElementById("resultBox").innerText = result;
+}
+
+// --- 이 부분을 추가하세요 ---
+function copyResult() {
+  const resultText = document.getElementById("resultBox").innerText;
+
+  if (!resultText) {
+    alert("먼저 견적 계산 버튼을 눌러주세요!");
+    return;
+  }
+
+  // 클립보드 복사 실행
+  navigator.clipboard.writeText(resultText).then(() => {
+    alert("📋 견적 내용이 복사되었습니다! 카톡창에 붙여넣기(Ctrl+V) 하세요.");
+  }).catch(err => {
+    console.error('복사 실패:', err);
+    alert("복사에 실패했습니다. 수동으로 복사해주세요.");
+  });
 }
