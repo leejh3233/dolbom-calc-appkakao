@@ -36,7 +36,6 @@ function calculate() {
 ━━━━━━━━━━━━━━━━
 💰 소비자가: ${basePrice.toLocaleString()}원 (장당 16,000원)
 👨‍👩‍👧‍👦 공동구매가: ${groupBuy.toLocaleString()}원 (장당 15,500원)
-
 🎁 추가 혜택 리스트: 
 1️⃣ 온누리 상품권 결제 시 10% 추가 할인
 2️⃣ 샘플박스 내 3만원 할인쿠폰 적용
