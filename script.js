@@ -41,6 +41,7 @@ function calculate() {
 ━━━━━━━━━━━━━━━━
 
 📌 예약 원하실 경우 카카오톡 채널에 "예약"이라고 입력해주세요!
+⚠️100장이하 시공시 시공비10만원 추가됩니다!
 ⚠️ 실제 시공 후 사용한 장수로 최종 정산됩니다.`;
 
   document.getElementById("resultBox").innerText = result;
